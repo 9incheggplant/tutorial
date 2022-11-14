@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "crossover:item/cobalt_hoe"
+  }
+}

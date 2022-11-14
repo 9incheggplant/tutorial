@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "crossover:block/cobalt_pressure_plate" },
+    "powered=true": { "model": "crossover:block/cobalt_pressure_plate_down" }
+  }
+}

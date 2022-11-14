@@ -1,0 +1,53 @@
+{
+  "item.crossover.fire_flower": "Fire Flower",
+  "item.crossover.ice_flower": "Ice Flower",
+  "item.crossover.cobalt_ingot": "Cobalt Ingot",
+  "item.crossover.cobalt_nugget": "Cobalt Nugget",
+  "item.crossover.dowsing_rod": "Dowsing Rod",
+  "item.crossover.coal_sliver": "Coal Sliver",
+  "item.crossover.turnip": "Turnip",
+  "item.crossover.cobalt_sword": "Cobalt Sword",
+  "item.crossover.cobalt_shovel": "Cobalt Shovel",
+  "item.crossover.cobalt_axe": "Cobalt Axe",
+  "item.crossover.cobalt_pickaxe": "Cobalt Pickaxe",
+  "item.crossover.cobalt_hoe": "Cobalt Hoe",
+  "item.crossover.cobalt_paxel": "Cobalt Paxel",
+  "item.crossover.cobalt_helmet": "Cobalt Helmet",
+  "item.crossover.cobalt_chestplate": "Cobalt Chestplate",
+  "item.crossover.cobalt_leggings": "Cobalt Leggings",
+  "item.crossover.cobalt_boots": "Cobalt Boots",
+  "item.crossover.cobalt_horse_armor": "Cobalt Horse Armor",
+
+  
+  
+
+
+
+  "block.crossover.ground_block": "Ground Block",
+  "block.crossover.underground_block": "Underground Block",
+  "block.crossover.cobalt_ore": "Cobalt Ore",
+  "block.crossover.deepslate_cobalt_ore": "Deepslate Cobalt Ore",
+  "block.crossover.speedy_block": "Speedy Block",
+  "block.crossover.cobalt_block": "Cobalt Block",
+  "block.crossover.cobalt_stairs": "Cobalt Stairs",
+  "block.crossover.cobalt_slab": "Cobalt Slab",
+  "block.crossover.cobalt_button": "Cobalt Button",
+  "block.crossover.cobalt_pressure_plate": "Cobalt Pressure Plate",
+  "block.crossover.cobalt_fence": "Cobalt Fence",
+  "block.crossover.cobalt_fence_gate": "Cobalt Fence Gate",
+  "block.crossover.cobalt_wall": "Cobalt Wall",
+  "block.crossover.cherry_blossom_door": "Cherry Blossom Door",
+  "block.crossover.cherry_blossom_trapdoor": "Cherry Blossom Trapdoor",
+
+
+
+
+  "itemGroup.crossovermodtab": "Crossover mod",
+
+  "item.crossover.dowsing_rod.no_valuables": "No Valuables Found",
+  "tooltip.crossover.dowsing_rod.tooltip.shift": "Right Click to find Valuables",
+  "tooltip.crossover.dowsing_rod.tooltip": "§bPress§b §eShift§e for more information",
+  "tooltip.block.speedy_block": "It gets Really speedy!",
+
+  "enchantment.crossover.lightning_striker": "Lightning Striker"
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crossover:block/cobalt_slab"
+    },
+    "type=double": {
+      "model": "crossover:block/cobalt_block"
+    },
+    "type=top": {
+      "model": "crossover:block/cobalt_slab_top"
+    }
+  }
+}

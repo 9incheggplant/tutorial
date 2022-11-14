@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crossover:underground_block",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 1
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_enchantments",
+          "enchantments": {}
+        }
+      ]
+    }
+  ]
+}
