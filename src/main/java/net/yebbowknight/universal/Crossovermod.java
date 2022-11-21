@@ -5,6 +5,8 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +22,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.enchantment.ModEnchantments;
 import net.yebbowknight.universal.item.ModItems;
+import net.yebbowknight.universal.sound.ModSounds;
+import net.yebbowknight.universal.util.ModItemProperties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,7 +45,9 @@ public class Crossovermod
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+
         ModEnchantments.register(eventBus);
+        ModSounds.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -53,12 +59,22 @@ public class Crossovermod
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TURNIP_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_ROSE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PINK_ROSE.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.COBALT_BLASTER.get(), RenderType.cutout());
+
+        ModItemProperties.addCustomItemProperties();
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    private void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ComposterBlock.COMPOSTABLES.put(ModItems.TURNIP_SEEDS.get(),0.35f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.TURNIP.get(),5f);
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PINK_ROSE.getId(), ModBlocks.POTTED_PINK_ROSE);
+        });
     }
 }

@@ -2,6 +2,8 @@ package net.yebbowknight.universal.block;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -12,9 +14,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yebbowknight.universal.Crossovermod;
-import net.yebbowknight.universal.block.custom.SpeedyBlock;
+import net.yebbowknight.universal.block.custom.*;
 import net.yebbowknight.universal.item.ModCreativeModeTab;
 import net.yebbowknight.universal.item.ModItems;
+import net.yebbowknight.universal.sound.ModSounds;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -82,6 +85,35 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHERRY_BLOSSOM_TRAPDOOR = registerBlock("cherry_blossom_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(2f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.CROSS_TAB);
+
+
+    public static final RegistryObject<Block> COBALT_LAMP = registerBlock("cobalt_lamp",
+            () -> new CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops().sound(ModSounds.COBALT_LAMP_SOUNDS)
+                    .lightLevel((state) -> state.getValue(CobaltLampBlock.CLICKED) ? 15 : 0)),
+            ModCreativeModeTab.CROSS_TAB);
+
+    public static final RegistryObject<Block> SUN_BLOCK = registerBlock("sun_block",
+            () -> new SunBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops()
+                    .lightLevel((state) -> state.getValue(SunBlock.CLICKED) ? 5000 : 1)),
+            ModCreativeModeTab.CROSS_TAB);
+
+    public static final RegistryObject<Block> TURNIP_CROP = BLOCKS.register("turnip_crop",
+            () -> new TurnipCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)
+                    .strength(2f).noCollission().noOcclusion()));
+
+    public static final RegistryObject<Block> PINK_ROSE = registerBlock("pink_rose",
+            () -> new FlowerBlock(MobEffects.BLINDNESS, 4,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)), ModCreativeModeTab.CROSS_TAB);
+
+    public static final RegistryObject<Block> POTTED_PINK_ROSE = BLOCKS.register("potted_pink_rose",
+            () -> new FlowerPotBlock(null, ModBlocks.PINK_ROSE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    public static final RegistryObject<Block> COBALT_BLASTER = registerBlock("cobalt_blaster",
+            () -> new CobaltBlasterBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+            ModCreativeModeTab.CROSS_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

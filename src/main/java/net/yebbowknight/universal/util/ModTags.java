@@ -12,6 +12,8 @@ public class ModTags {
     public static class Blocks {
         public static final Tags.IOptionalNamedTag<Block> DOWSING_ROD_VALUABLES =
                 tag("dowsing_rod_valuables");
+        public static final Tags.IOptionalNamedTag<Block> STORAGE_FINDER_VALUABLES =
+                tag("storage_finder_valuables");
         public static final Tags.IOptionalNamedTag<Block> PAXEL_MINEABLE =
                 tag("mineable/paxel");
 

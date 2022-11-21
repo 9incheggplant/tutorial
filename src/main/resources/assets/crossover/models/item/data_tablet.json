@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "crossover:item/data_tablet_off"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "crossover:on": 1
+      },
+      "model": "crossover:item/data_tablet_on"
+    }
+  ]
+}

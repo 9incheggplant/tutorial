@@ -1,10 +1,5 @@
 package net.yebbowknight.universal.item.custom;
 
-import net.minecraft.sounds.SoundSource;
-import net.yebbowknight.universal.item.ModItems;
-import net.yebbowknight.universal.sound.ModSounds;
-import net.yebbowknight.universal.util.InventoryUtil;
-import net.yebbowknight.universal.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -19,13 +14,15 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.yebbowknight.universal.item.ModItems;
+import net.yebbowknight.universal.util.InventoryUtil;
+import net.yebbowknight.universal.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class DowsingRodItem extends Item {
-    public DowsingRodItem(Properties pProperties) {
+public class StorageFinderItem extends Item {
+    public StorageFinderItem(Properties pProperties) {
         super(pProperties);
     }
 
@@ -43,19 +40,16 @@ public class DowsingRodItem extends Item {
                     outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
                     foundBlock = true;
 
-                    if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())) {
+                    if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.PIRATED_MEMORY_CARD.get())) {
                         addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
                     }
-
-                    pContext.getLevel().playSound(player, positionClicked, ModSounds.DOWSING_ROD_FOUND_ORE.get(),
-                            SoundSource.BLOCKS, 1f, 1f);
 
                     break;
                 }
             }
 
             if(!foundBlock) {
-                player.sendMessage(new TranslatableComponent("item.crossover.dowsing_rod.no_valuables"),
+                player.sendMessage(new TranslatableComponent("item.crossover.pirated_memory_card.no_container"),
                         player.getUUID());
             }
         }
@@ -67,23 +61,23 @@ public class DowsingRodItem extends Item {
     }
 
     private void addNbtToDataTablet(Player player, BlockPos pos, Block blockBelow) {
-        ItemStack dataTablet =
-                player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET.get()));
+        ItemStack piratedmemorycard =
+                player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.PIRATED_MEMORY_CARD.get()));
 
         CompoundTag nbtData = new CompoundTag();
-        nbtData.putString("crossover.last_ore", "Found " + blockBelow.asItem().getRegistryName().toString() + " at (" +
+        nbtData.putString("crossover.last_container", "Found " + blockBelow.asItem().getRegistryName().toString() + " at (" +
                 pos.getX() + ", "+ pos.getY() + ", "+ pos.getZ() + ")");
 
-        dataTablet.setTag(nbtData);
+        piratedmemorycard.setTag(nbtData);
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
                                 TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.dowsing_rod.tooltip.shift"));
+            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.storage_finder.shift"));
         } else {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.dowsing_rod.tooltip"));
+            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.storage_finder.tooltip"));
         }
     }
 
@@ -93,6 +87,6 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return ModTags.Blocks.DOWSING_ROD_VALUABLES.contains(block);
+        return ModTags.Blocks.STORAGE_FINDER_VALUABLES.contains(block);
     }
 }

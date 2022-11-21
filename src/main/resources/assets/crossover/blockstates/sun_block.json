@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "clicked=false": { "model": "crossover:block/sun_block_off" },
+    "clicked=true": { "model": "crossover:block/sun_block_on" }
+  }
+}

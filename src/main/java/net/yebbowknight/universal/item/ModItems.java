@@ -7,7 +7,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yebbowknight.universal.Crossovermod;
+import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.item.custom.*;
+import net.yebbowknight.universal.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -80,6 +82,29 @@ public class ModItems {
             () -> new HorseArmorItem(12, "cobalt",
                     new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB)));
 
+    public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> PIRATED_MEMORY_CARD = ITEMS.register("pirated_memory_card",
+            () -> new PiratedmemorycardtItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> STORAGE_FINDER = ITEMS.register("storage_finder",
+            () -> new StorageFinderItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(50)));
+
+
+    public static final RegistryObject<Item> TURNIP_SEEDS = ITEMS.register("turnip_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.TURNIP_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB)));
+
+    public static final RegistryObject<Item> BAR_BRAWL_RECORD = ITEMS.register("bar_brawl_music_disc",
+            () -> new RecordItem(4, ModSounds.BAR_BRAWL,
+                    new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> COBALT_STAFF = ITEMS.register("cobalt_staff",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> COBALT_BOW = ITEMS.register("cobalt_bow",
+            () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
 
 
     public static void register(IEventBus eventBus) {

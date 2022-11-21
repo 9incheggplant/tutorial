@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "crossover:item/pirated_memory_card_off"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "crossover:on": 1
+      },
+      "model": "crossover:item/pirated_memory_card_on"
+    }
+  ]
+}

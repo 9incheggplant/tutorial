@@ -31,6 +31,41 @@ public class LightningStrikerEnchantment extends Enchantment {
 
                 EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
                         MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
+
+                EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+                        MobSpawnType.TRIGGERED, true, true);
             }
         }
 

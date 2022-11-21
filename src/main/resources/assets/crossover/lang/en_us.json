@@ -17,11 +17,18 @@
   "item.crossover.cobalt_leggings": "Cobalt Leggings",
   "item.crossover.cobalt_boots": "Cobalt Boots",
   "item.crossover.cobalt_horse_armor": "Cobalt Horse Armor",
+  "item.crossover.data_tablet": "Data Tablet",
+  "item.crossover.storage_finder": "Storage Finder",
+  "item.crossover.pirated_memory_card": "Pirated USB Drive",
 
+  "item.crossover.turnip_seeds": "Turnip Seeds",
+  "item.crossover.turnip_crop": "Turnip Crop",
+  "item.crossover.cobalt_staff": "Cobalt Staff",
+  "item.crossover.cobalt_bow": "Cobalt Bow",
+
+  "item.crossover.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.crossover.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
   
-  
-
-
 
   "block.crossover.ground_block": "Ground Block",
   "block.crossover.underground_block": "Underground Block",
@@ -38,6 +45,12 @@
   "block.crossover.cobalt_wall": "Cobalt Wall",
   "block.crossover.cherry_blossom_door": "Cherry Blossom Door",
   "block.crossover.cherry_blossom_trapdoor": "Cherry Blossom Trapdoor",
+  "block.crossover.cobalt_lamp": "Cobalt Lamp",
+  "block.crossover.sun_block": "Sun Block",
+  "block.crossover.turnip_crop": "Turnip Crop",
+  "block.crossover.pink_rose": "Pink Rose",
+  "block.crossover.potted_pink_rose": "Potted Pink Rose",
+  "block.crossover.cobalt_blaster": "Cobalt Blaster",
 
 
 
@@ -48,6 +61,9 @@
   "tooltip.crossover.dowsing_rod.tooltip.shift": "Right Click to find Valuables",
   "tooltip.crossover.dowsing_rod.tooltip": "§bPress§b §eShift§e for more information",
   "tooltip.block.speedy_block": "It gets Really speedy!",
+  "tooltip.crossover.storage_finder.shift": "Shift for Me instructions",
+  "tooltip.crossover.storage_finder.tooltip": "Right Click For Some BOOTY",
+  "item.crossover.pirated_memory_card.no_container": "Wheres That BOOTY mate? Go search more ya scurvy dog",
 
   "enchantment.crossover.lightning_striker": "Lightning Striker"
 }

@@ -1,0 +1,6 @@
+{
+    "parent": "crossover:item/cobalt_bow",
+    "textures": {
+        "layer0": "crossover:item/cobalt_bow_pulling_0"
+    }
+}
