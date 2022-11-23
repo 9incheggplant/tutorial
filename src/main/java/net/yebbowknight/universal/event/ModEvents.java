@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.event;
+ package net.yebbowknight.universal.event;
 
 import net.yebbowknight.universal.Crossovermod;
 import net.yebbowknight.universal.command.ReturnHomeCommand;
@@ -8,7 +8,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.server.command.ConfigCommand;
-import net.yebbowknight.universal.Crossovermod;
 
 @Mod.EventBusSubscriber(modid = Crossovermod.MOD_ID)
 public class ModEvents {

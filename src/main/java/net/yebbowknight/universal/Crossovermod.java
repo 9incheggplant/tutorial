@@ -21,7 +21,9 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.enchantment.ModEnchantments;
+import net.yebbowknight.universal.fluid.ModFluids;
 import net.yebbowknight.universal.item.ModItems;
+import net.yebbowknight.universal.painting.ModPaintings;
 import net.yebbowknight.universal.sound.ModSounds;
 import net.yebbowknight.universal.util.ModItemProperties;
 import org.apache.logging.log4j.LogManager;
@@ -48,6 +50,8 @@ public class Crossovermod
 
         ModEnchantments.register(eventBus);
         ModSounds.register(eventBus);
+        ModPaintings.register(eventBus);
+        ModFluids.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -65,6 +69,10 @@ public class Crossovermod
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PINK_ROSE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.COBALT_BLASTER.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLUID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLOWING.get(), RenderType.translucent());
 
         ModItemProperties.addCustomItemProperties();
     }

@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yebbowknight.universal.Crossovermod;
 import net.yebbowknight.universal.block.ModBlocks;
+import net.yebbowknight.universal.fluid.ModFluids;
 import net.yebbowknight.universal.item.custom.*;
 import net.yebbowknight.universal.sound.ModSounds;
 
@@ -105,6 +106,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> COBALT_BOW = ITEMS.register("cobalt_bow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
+
+    public static final RegistryObject<Item> HONEY_BUCKET = ITEMS.register("honey_bucket",
+            () -> new BucketItem(ModFluids.HONEY_FLUID,
+                    new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
 
 
     public static void register(IEventBus eventBus) {

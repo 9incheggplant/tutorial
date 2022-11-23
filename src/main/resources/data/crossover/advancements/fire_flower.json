@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "crossover:fire_flower"
+    },
+    "title": "Fiery Flower",
+    "description": "Get 64 Fire Flowers",
+    "background": "minecraft:magma_block",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crossover:fire_flower"
+            ],
+            "tag": "crossover:fire_flower",
+            "count": 64
+          }
+        ]
+      }
+    }
+  }
+}
