@@ -20,6 +20,7 @@
   "item.crossover.data_tablet": "Data Tablet",
   "item.crossover.storage_finder": "Storage Finder",
   "item.crossover.pirated_memory_card": "Pirated USB Drive",
+  "item.crossover.raw_cobalt": "Raw Cobalt",
 
   "item.crossover.turnip_seeds": "Turnip Seeds",
   "item.crossover.turnip_crop": "Turnip Crop",
@@ -53,7 +54,11 @@
   "block.crossover.potted_pink_rose": "Potted Pink Rose",
   "block.crossover.cobalt_blaster": "Cobalt Blaster",
 
-
+  "block.crossover.cherry_blossom_log": "Cherry Blossom Log",
+  "block.crossover.cherry_blossom_planks": "Cherry Blossom Planks",
+  "block.crossover.cherry_blossom_wood": "Cherry Blossom Wood",
+  "block.crossover.stripped_cherry_blossom_log": "Stripped Cherry Blossom Log",
+  "block.crossover.stripped_cherry_blossom_wood": "Stripped Cherry Blossom Wood",
 
 
   "itemGroup.crossovermodtab": "Crossover mod",

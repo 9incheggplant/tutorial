@@ -111,6 +111,8 @@ public class ModItems {
             () -> new BucketItem(ModFluids.HONEY_FLUID,
                     new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
 
+    public static final RegistryObject<Item> RAW_COBALT = ITEMS.register("raw_cobalt",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
