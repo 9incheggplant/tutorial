@@ -1,5 +1,6 @@
 package net.yebbowknight.universal.item.custom;
 
+import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundSource;
 import net.yebbowknight.universal.item.ModItems;
 import net.yebbowknight.universal.sound.ModSounds;
@@ -93,6 +94,6 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return ModTags.Blocks.DOWSING_ROD_VALUABLES.contains(block);
+        return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
     }
 }

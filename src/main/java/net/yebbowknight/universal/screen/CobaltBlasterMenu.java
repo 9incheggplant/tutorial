@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.screen;
+ package net.yebbowknight.universal.screen;
 
 import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.block.entity.CobaltBlasterBlockEntity;

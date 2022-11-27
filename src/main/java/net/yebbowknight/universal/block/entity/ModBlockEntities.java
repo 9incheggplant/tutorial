@@ -20,4 +20,9 @@ public class ModBlockEntities {
         BLOCK_ENTITIES.register(eventBus);
     }
 
+    public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> SIGN_BLOCK_ENTITIES =
+            BLOCK_ENTITIES.register("sign_block_entity", () ->
+                    BlockEntityType.Builder.of(ModSignBlockEntity::new,
+                            ModBlocks.CHERRY_BLOSSOM_WALL_SIGN.get(),
+                            ModBlocks.CHERRY_BLOSSOM_SIGN.get()).build(null));
 }

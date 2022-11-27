@@ -10,7 +10,6 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
-import net.yebbowknight.universal.Crossovermod;
 
 import javax.annotation.Nullable;
 

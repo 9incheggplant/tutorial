@@ -1,5 +1,5 @@
-{
-  "type": "crossover:cobalt_blasting",
+ {
+  "type": "minecraft:blasting",
   "ingredients": [
     {
       "item": "minecraft:golden_pickaxe"

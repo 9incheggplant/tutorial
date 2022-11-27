@@ -1,7 +1,7 @@
 package net.yebbowknight.universal.block.entity;
 
 import net.yebbowknight.universal.item.ModItems;
-import net.yebbowknight.universal.recipe.CobaltBlasterRecipe;
+ import net.yebbowknight.universal.recipe.CobaltBlasterRecipe;
 import net.yebbowknight.universal.screen.CobaltBlasterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

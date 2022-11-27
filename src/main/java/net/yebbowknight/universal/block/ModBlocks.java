@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
@@ -22,6 +23,7 @@ import net.yebbowknight.universal.block.custom.*;
 import net.yebbowknight.universal.item.ModCreativeModeTab;
 import net.yebbowknight.universal.item.ModItems;
 import net.yebbowknight.universal.sound.ModSounds;
+import net.yebbowknight.universal.world.feature.tree.CherryBlossomTreeGrower;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -44,8 +46,8 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops()), ModCreativeModeTab.CROSS_TAB);
 
     public static final RegistryObject<Block> COBALT_ORE = registerBlock("cobalt_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(4f).requiresCorrectToolForDrops()), ModCreativeModeTab.CROSS_TAB);
+            () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2, 4)), ModCreativeModeTab.CROSS_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
@@ -148,6 +150,40 @@ public class ModBlocks {
                     return 5;
                 }
             }, ModCreativeModeTab.CROSS_TAB);
+
+    public static final RegistryObject<Block> CHERRY_BLOSSOM_LEAVES = registerBlock("cherry_blossom_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 30;
+                }
+            }, ModCreativeModeTab.CROSS_TAB);
+
+
+    public static final RegistryObject<Block> CHERRY_BLOSSOM_SAPLING = registerBlock("cherry_blossom_sapling",
+            () -> new SaplingBlock(new CherryBlossomTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)),
+            ModCreativeModeTab.CROSS_TAB);
+
+    public static final RegistryObject<Block> WINTER_WINDOW = registerBlock("winter_window",
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)),
+            ModCreativeModeTab.CROSS_TAB);
+
+
+    public static final RegistryObject<Block> CHERRY_BLOSSOM_SIGN = BLOCKS.register("cherry_blossom_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD), ModWoodTypes.CHERRY_BLOSSOM));
+
+    public static final RegistryObject<Block> CHERRY_BLOSSOM_WALL_SIGN = BLOCKS.register("cherry_blossom_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD), ModWoodTypes.CHERRY_BLOSSOM));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

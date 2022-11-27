@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "crossover:cherry_blossom_log",
+    "crossover:cherry_blossom_wood",
+    "crossover:stripped_cherry_blossom_log",
+    "crossover:stripped_cherry_blossom_wood"
+  ]
+}

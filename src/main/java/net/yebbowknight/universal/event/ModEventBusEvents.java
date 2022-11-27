@@ -1,6 +1,12 @@
 package net.yebbowknight.universal.event;
 
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.yebbowknight.universal.Crossovermod;
+import net.yebbowknight.universal.entity.ModEntityTypes;
+import net.yebbowknight.universal.entity.custom.RaccoonEntity;
+import net.yebbowknight.universal.entity.custom.TigerEntity;
 import net.yebbowknight.universal.event.loot.DowsingRodInIglooAdditionModifier;
 import net.yebbowknight.universal.event.loot.TurnipSeedsFromGrassAdditionModifier;
 import net.minecraft.resources.ResourceLocation;
@@ -8,8 +14,10 @@ import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+// import net.yebbowknight.universal.recipe.CobaltBlasterRecipe;
 
 import javax.annotation.Nonnull;
+import javax.swing.text.html.parser.Entity;
 
 @Mod.EventBusSubscriber(modid = Crossovermod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -23,4 +31,16 @@ public class ModEventBusEvents {
                         (new ResourceLocation(Crossovermod.MOD_ID,"dowsing_rod_in_igloo"))
         );
     }
+
+@SubscribeEvent
+    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
+        event.put(ModEntityTypes.TIGER.get(), TigerEntity.setAttributes());
+    }
+
+ /*   @SubscribeEvent
+    public static void RegisterRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>>event) {
+        Registry.register(Registry.RECIPE_TYPE, CobaltBlasterRecipe.Type.ID, CobaltBlasterRecipe.Type.INSTANCE);
+
+     } */
 }

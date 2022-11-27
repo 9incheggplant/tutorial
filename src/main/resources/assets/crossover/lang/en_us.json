@@ -27,6 +27,8 @@
   "item.crossover.cobalt_staff": "Cobalt Staff",
   "item.crossover.cobalt_bow": "Cobalt Bow",
   "item.crossover.honey_bucket": "Honey Bucket",
+  "item.crossover.magic_dust": "Magic Dust",
+  "block.crossover.cherry_blossom_sign": "Cherry Blossom Sign",
 
   "item.crossover.bar_brawl_music_disc": "Bar Brawl Music Disc",
   "item.crossover.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
@@ -59,6 +61,11 @@
   "block.crossover.cherry_blossom_wood": "Cherry Blossom Wood",
   "block.crossover.stripped_cherry_blossom_log": "Stripped Cherry Blossom Log",
   "block.crossover.stripped_cherry_blossom_wood": "Stripped Cherry Blossom Wood",
+  "block.crossover.stripped_cherry_blossom_sign": "Cherry Blossoom Sign",
+  "block.crossover.cherry_blossom_leaves": "Cherry Blossoom Leaves",
+  "block.crossover.cherry_blossom_sapling": "Cherry Blossoom Sapling",
+
+  "block.crossover.winter_window": "Winter Window",
 
 
   "itemGroup.crossovermodtab": "Crossover mod",
@@ -70,6 +77,16 @@
   "tooltip.crossover.storage_finder.shift": "Shift for Me instructions",
   "tooltip.crossover.storage_finder.tooltip": "Right Click For Some BOOTY",
   "item.crossover.pirated_memory_card.no_container": "Wheres That BOOTY mate? Go search more ya scurvy dog",
+
+  "effect.crossover.freeze": "Freeze",
+  "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
+  "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze",
+
+  "item.crossover.raccoon_spawn_egg": "Raccoon Spawn Egg",
+  "item.crossover.tiger_spawn_egg": "Tiger Spawn Egg",
+  "item.crossover.cherry_blossom_boat": "Cherry Blossom Boat",
+
 
   "enchantment.crossover.lightning_striker": "Lightning Striker"
 }

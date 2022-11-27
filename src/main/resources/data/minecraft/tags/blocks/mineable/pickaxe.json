@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "crossover:ground_block",
-    "crossover:underground_block"
+    "crossover:underground_block",
+    "crossover:cobalt_ore",
+    "crossover:deepslate_cobalt_ore"
   ]
 }

@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.screen;
+ package net.yebbowknight.universal.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
