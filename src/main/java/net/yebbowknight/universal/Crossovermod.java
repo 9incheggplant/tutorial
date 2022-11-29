@@ -42,6 +42,7 @@ import net.yebbowknight.universal.screen.ModMenuTypes;
 import net.yebbowknight.universal.sound.ModSounds;
 import net.yebbowknight.universal.util.BetterBrewingRecipe;
 import net.yebbowknight.universal.util.ModItemProperties;
+import net.yebbowknight.universal.world.structure.ModStructures;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
@@ -76,6 +77,7 @@ public class Crossovermod
 
         ModPotions.register(eventBus);
         ModEntityTypes.register(eventBus);
+        ModStructures.register(eventBus);
 
         GeckoLib.initialize();
 

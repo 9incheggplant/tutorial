@@ -1,5 +1,6 @@
 package net.yebbowknight.universal.world.feature;
 
+import net.yebbowknight.universal.Crossovermod;
 import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.config.CrossoverCommonConfigs;
 import net.minecraft.core.Holder;

@@ -1,17 +1,18 @@
 package net.yebbowknight.universal.item.custom;
 
-import net.minecraft.core.Registry;
-import net.minecraft.sounds.SoundSource;
+import io.netty.channel.epoll.EpollTcpInfo;
 import net.yebbowknight.universal.item.ModItems;
 import net.yebbowknight.universal.sound.ModSounds;
 import net.yebbowknight.universal.util.InventoryUtil;
 import net.yebbowknight.universal.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -56,7 +57,7 @@ public class DowsingRodItem extends Item {
             }
 
             if(!foundBlock) {
-                player.sendMessage(new TranslatableComponent("item.crossover.dowsing_rod.no_valuables"),
+                player.sendMessage(new TranslatableComponent("item.universal.dowsing_rod.no_valuables"),
                         player.getUUID());
             }
         }
@@ -72,7 +73,7 @@ public class DowsingRodItem extends Item {
                 player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET.get()));
 
         CompoundTag nbtData = new CompoundTag();
-        nbtData.putString("crossover.last_ore", "Found " + blockBelow.asItem().getRegistryName().toString() + " at (" +
+        nbtData.putString("universal.last_ore", "Found " + blockBelow.asItem().getRegistryName().toString() + " at (" +
                 pos.getX() + ", "+ pos.getY() + ", "+ pos.getZ() + ")");
 
         dataTablet.setTag(nbtData);
@@ -82,9 +83,9 @@ public class DowsingRodItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
                                 TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.dowsing_rod.tooltip.shift"));
+            pTooltipComponents.add(new TranslatableComponent("tooltip.universal.dowsing_rod.tooltip.shift"));
         } else {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.dowsing_rod.tooltip"));
+            pTooltipComponents.add(new TranslatableComponent("tooltip.universal.dowsing_rod.tooltip"));
         }
     }
 

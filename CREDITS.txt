@@ -1,1 +1,4 @@
 Cobalt Blaster and Paintings by Platinum617
+Structure Code & JSON Files all from TelepathicGrunt
+(Under MIT-License: https://github.com/TelepathicGrunt/StructureTutorialMod/blob/1.18.2-Forge-Jigsaw/LICENSE.txt):
+https://github.com/TelepathicGrunt/StructureTutorialMod
