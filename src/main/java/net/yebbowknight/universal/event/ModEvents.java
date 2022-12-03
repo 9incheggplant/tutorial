@@ -24,6 +24,7 @@ import net.minecraftforge.server.command.ConfigCommand;
 import net.yebbowknight.universal.config.CrossoverClientConfigs;
 import net.yebbowknight.universal.item.ModItems;
 import net.yebbowknight.universal.util.KaupenTitleScreen;
+import net.yebbowknight.universal.villager.ModVillagers;
 
 import java.util.List;
 
@@ -84,6 +85,33 @@ public class ModEvents {
              trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                      new ItemStack(Items.EMERALD, 12),
                      stack,4,5,0.09F));
+         }
+
+         if(event.getType() == ModVillagers.BLASTMASTER.get()) {
+             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+             ItemStack stack = new ItemStack(ModItems.COBALT_PAXEL.get(), 1);
+             int villagerLevel = 1;
+
+             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                     new ItemStack(Items.EMERALD, 12),
+                     stack,4,5,0.09F));
+
+             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                     new ItemStack(Items.EMERALD, 27),
+                     stack,4,5,0.09F));
+
+             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                     new ItemStack(Items.EMERALD, 35),
+                     stack,4,5,0.09F));
+
+             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                     new ItemStack(Items.EMERALD, 5),
+                     stack,4,5,0.09F));
+
+             trades.get(2).add((trader, rand) -> new MerchantOffer(
+                     new ItemStack(Items.EMERALD, 6),
+                     stack,4,5,0.09F));
+
          }
      }
 }

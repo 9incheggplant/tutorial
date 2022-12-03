@@ -42,6 +42,7 @@ import net.yebbowknight.universal.screen.ModMenuTypes;
 import net.yebbowknight.universal.sound.ModSounds;
 import net.yebbowknight.universal.util.BetterBrewingRecipe;
 import net.yebbowknight.universal.util.ModItemProperties;
+import net.yebbowknight.universal.villager.ModVillagers;
 import net.yebbowknight.universal.world.structure.ModStructures;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -78,11 +79,11 @@ public class Crossovermod
         ModPotions.register(eventBus);
         ModEntityTypes.register(eventBus);
         ModStructures.register(eventBus);
+        ModVillagers.register(eventBus);
 
         GeckoLib.initialize();
 
         eventBus.addListener(this::setup);
-        eventBus.addListener(this::clientSetup);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CrossoverClientConfigs.SPEC, "crossover-client.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CrossoverCommonConfigs.SPEC, "crossover-common.toml");
@@ -90,38 +91,6 @@ public class Crossovermod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
-
-    private void clientSetup(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TURNIP_CROP.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_ROSE.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PINK_ROSE.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.COBALT_BLASTER.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLUID.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLOWING.get(), RenderType.translucent());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_LEAVES.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_SAPLING.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WINTER_WINDOW.get(), RenderType.translucent());
-
-
-        ModItemProperties.addCustomItemProperties();
-
-        MenuScreens.register(ModMenuTypes.COBALT_BLASTER_MENU.get(), CobaltBlasterScreen::new);
-
-        WoodType.register(ModWoodTypes.CHERRY_BLOSSOM);
-
-        EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
-        EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
-
-        EntityRenderers.register(ModEntityTypes.BOAT_ENTITY.get(), ModBoatRenderer::new);
-}
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ComposterBlock.COMPOSTABLES.put(ModItems.TURNIP_SEEDS.get(),0.35f);
@@ -134,6 +103,8 @@ public class Crossovermod
 
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
                     ModItems.COBALT_INGOT.get(), ModPotions.FREEZE_POTION.get()));
+
+            ModVillagers.registerPOIs();
 
         });
     }

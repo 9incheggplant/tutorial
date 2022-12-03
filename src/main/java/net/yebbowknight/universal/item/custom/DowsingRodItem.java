@@ -1,6 +1,7 @@
 package net.yebbowknight.universal.item.custom;
 
 import io.netty.channel.epoll.EpollTcpInfo;
+import net.minecraft.world.level.block.state.BlockState;
 import net.yebbowknight.universal.item.ModItems;
 import net.yebbowknight.universal.sound.ModSounds;
 import net.yebbowknight.universal.util.InventoryUtil;
@@ -39,14 +40,14 @@ public class DowsingRodItem extends Item {
             boolean foundBlock = false;
 
             for(int i = 0; i <= positionClicked.getY() + 64; i++) {
-                Block blockBelow = pContext.getLevel().getBlockState(positionClicked.below(i)).getBlock();
+                BlockState blockBelow = pContext.getLevel().getBlockState(positionClicked.below(i));
 
                 if(isValuableBlock(blockBelow)) {
-                    outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
+                    outputValuableCoordinates(positionClicked.below(i), player, blockBelow.getBlock());
                     foundBlock = true;
 
                     if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())) {
-                        addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
+                        addNbtToDataTablet(player, positionClicked.below(i), blockBelow.getBlock());
                     }
 
                     pContext.getLevel().playSound(player, positionClicked, ModSounds.DOWSING_ROD_FOUND_ORE.get(),
@@ -57,7 +58,7 @@ public class DowsingRodItem extends Item {
             }
 
             if(!foundBlock) {
-                player.sendMessage(new TranslatableComponent("item.universal.dowsing_rod.no_valuables"),
+                player.sendMessage(new TranslatableComponent("item.mccourse.dowsing_rod.no_valuables"),
                         player.getUUID());
             }
         }
@@ -68,6 +69,9 @@ public class DowsingRodItem extends Item {
         return super.useOn(pContext);
     }
 
+    private boolean isValuableBlock(BlockState state) {
+        return state.is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
+    }
     private void addNbtToDataTablet(Player player, BlockPos pos, Block blockBelow) {
         ItemStack dataTablet =
                 player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET.get()));

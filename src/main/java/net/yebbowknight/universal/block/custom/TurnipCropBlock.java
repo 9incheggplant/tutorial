@@ -1,8 +1,8 @@
 package net.yebbowknight.universal.block.custom;
 
+import net.yebbowknight.universal.item.ModItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.BeetrootBlock;
-import net.yebbowknight.universal.item.ModItems;
 
 public class TurnipCropBlock extends BeetrootBlock {
     public TurnipCropBlock(Properties properties) {

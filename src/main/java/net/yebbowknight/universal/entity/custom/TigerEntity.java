@@ -1,5 +1,6 @@
 package net.yebbowknight.universal.entity.custom;
 
+import net.minecraft.world.item.Items;
 import net.yebbowknight.universal.entity.ModEntityTypes;
 import net.yebbowknight.universal.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -63,8 +64,13 @@ public class TigerEntity extends TamableAnimal implements PlayerRideable, IAnima
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-        return null;
+    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
+        return ModEntityTypes.TIGER.get().create(serverLevel);
+    }
+
+    @Override
+    public boolean isFood(ItemStack pStack) {
+        return pStack.getItem() == Items.BEEF;
     }
 
     @Override
@@ -102,6 +108,7 @@ public class TigerEntity extends TamableAnimal implements PlayerRideable, IAnima
         super.registerGoals();
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+        this.goalSelector.addGoal(2, new BreedGoal(this,1.00));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(3, new RandomSwimmingGoal(this,0,1));

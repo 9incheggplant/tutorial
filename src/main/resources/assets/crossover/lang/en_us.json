@@ -66,6 +66,7 @@
   "block.crossover.cherry_blossom_sapling": "Cherry Blossoom Sapling",
 
   "block.crossover.winter_window": "Winter Window",
+  "block.crossover.pedestal": "Pedestal",
 
 
   "itemGroup.crossovermodtab": "Crossover mod",
@@ -86,6 +87,8 @@
   "item.crossover.raccoon_spawn_egg": "Raccoon Spawn Egg",
   "item.crossover.tiger_spawn_egg": "Tiger Spawn Egg",
   "item.crossover.cherry_blossom_boat": "Cherry Blossom Boat",
+
+  "entity.minecraft.villager.crossover.blastmaster": "Blast Master",
 
 
   "enchantment.crossover.lightning_striker": "Lightning Striker"

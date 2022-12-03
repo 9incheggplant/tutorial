@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.recipe;
+ package net.yebbowknight.universal.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
