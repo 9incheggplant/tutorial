@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:village",
+
+  "config": {
+    "start_pool": "crossover:rich_platform/start_pool",
+
+    "size": 2
+  },
+
+  "biomes": "#crossover:has_structure/rich_platform",
+
+  "adapt_noise": true,
+
+  "spawn_overrides": {
+    "creature": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "crossover:tiger",
+          "weight": 1,
+          "minCount": 1,
+          "maxCount": 2
+        }
+      ]
+    }
+  }
+}

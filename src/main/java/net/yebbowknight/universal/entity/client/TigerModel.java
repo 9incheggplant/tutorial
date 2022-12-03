@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class TigerModel extends AnimatedGeoModel<TigerEntity> {
     @Override
-    public ResourceLocation getModelLocation(TigerEntity entity)	{
+    public ResourceLocation getModelResource(TigerEntity entity)	{
         return new ResourceLocation(Crossovermod.MOD_ID, "geo/tiger.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(TigerEntity entity) {
+    public ResourceLocation getTextureResource(TigerEntity entity) {
         return new ResourceLocation(Crossovermod.MOD_ID, "textures/entity/tiger/tiger.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(TigerEntity entity)	{
+    public ResourceLocation getAnimationResource(TigerEntity entity)	{
         return new ResourceLocation(Crossovermod.MOD_ID, "animations/tiger.animation.json");
     }
 }

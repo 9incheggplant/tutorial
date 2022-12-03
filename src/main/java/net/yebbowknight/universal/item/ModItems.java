@@ -10,8 +10,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yebbowknight.universal.Crossovermod;
 import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.entity.ModEntityTypes;
-import net.yebbowknight.universal.entity.custom.ModBoatEntity;
-import net.yebbowknight.universal.fluid.ModFluids;
 import net.yebbowknight.universal.item.custom.*;
 import net.yebbowknight.universal.sound.ModSounds;
 
@@ -89,11 +87,11 @@ public class ModItems {
     public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
             () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> PIRATED_MEMORY_CARD = ITEMS.register("pirated_memory_card",
-            () -> new PiratedmemorycardtItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
-
-    public static final RegistryObject<Item> STORAGE_FINDER = ITEMS.register("storage_finder",
-            () -> new StorageFinderItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(50)));
+  //  public static final RegistryObject<Item> PIRATED_MEMORY_CARD = ITEMS.register("pirated_memory_card",
+  //          () -> new PiratedmemorycardtItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).stacksTo(1)));
+//
+  //  public static final RegistryObject<Item> STORAGE_FINDER = ITEMS.register("storage_finder",
+  //          () -> new StorageFinderItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(50)));
 
 
     public static final RegistryObject<Item> TURNIP_SEEDS = ITEMS.register("turnip_seeds",
@@ -110,9 +108,9 @@ public class ModItems {
     public static final RegistryObject<Item> COBALT_BOW = ITEMS.register("cobalt_bow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
 
-    public static final RegistryObject<Item> HONEY_BUCKET = ITEMS.register("honey_bucket",
-            () -> new BucketItem(ModFluids.HONEY_FLUID,
-                    new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
+   // public static final RegistryObject<Item> HONEY_BUCKET = ITEMS.register("honey_bucket",
+   //         () -> new BucketItem(ModFluids.HONEY_FLUID,
+   //                 new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB).durability(500)));
 
     public static final RegistryObject<Item> RAW_COBALT = ITEMS.register("raw_cobalt",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB)));
@@ -132,8 +130,8 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.TIGER,0xfcb603, 0x242321,
                     new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB)));
 
-    public static final RegistryObject<Item> CHERRY_BLOSSOM_BOAT = ITEMS.register("cherry_blossom_boat",
-            () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB), ModBoatEntity.Type.CHERRY_BLOSSOM));
+  //  public static final RegistryObject<Item> CHERRY_BLOSSOM_BOAT = ITEMS.register("cherry_blossom_boat",
+  //          () -> new ModBoatItem(new Item.Properties().tab(ModCreativeModeTab.CROSS_TAB), ModBoatEntity.Type.CHERRY_BLOSSOM));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

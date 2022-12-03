@@ -1,13 +1,9 @@
 package net.yebbowknight.universal.block.entity;
 
-import net.yebbowknight.universal.item.ModItems;
- import net.yebbowknight.universal.recipe.CobaltBlasterRecipe;
-import net.yebbowknight.universal.screen.CobaltBlasterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -26,6 +22,8 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.yebbowknight.universal.recipe.CobaltBlasterRecipe;
+import net.yebbowknight.universal.screen.CobaltBlasterMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -77,7 +75,7 @@ public class CobaltBlasterBlockEntity extends BlockEntity implements MenuProvide
 
     @Override
     public Component getDisplayName() {
-        return new TextComponent("Cobalt Blaster");
+        return Component.literal("Cobalt Blaster");
     }
 
     @Nullable

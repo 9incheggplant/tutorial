@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.item.custom;
+/* package net.yebbowknight.universal.item.custom;
 
 import net.yebbowknight.universal.entity.custom.ModBoatEntity;
 import net.minecraft.stats.Stats;
@@ -67,4 +67,4 @@ public class ModBoatItem extends Item {
             }
         }
     }
-}
+}*/

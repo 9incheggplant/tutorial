@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.entity.client;
+/* package net.yebbowknight.universal.entity.client;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
@@ -43,4 +43,4 @@ public class ModBoatRenderer extends BoatRenderer {
 
         return null;
     }
-}
+} */

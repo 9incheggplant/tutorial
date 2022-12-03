@@ -1,18 +1,9 @@
 package net.yebbowknight.universal.item.custom;
 
-import io.netty.channel.epoll.EpollTcpInfo;
-import net.minecraft.world.level.block.state.BlockState;
-import net.yebbowknight.universal.item.ModItems;
-import net.yebbowknight.universal.sound.ModSounds;
-import net.yebbowknight.universal.util.InventoryUtil;
-import net.yebbowknight.universal.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -22,7 +13,11 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.yebbowknight.universal.item.ModItems;
+import net.yebbowknight.universal.sound.ModSounds;
+import net.yebbowknight.universal.util.InventoryUtil;
+import net.yebbowknight.universal.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -58,8 +53,7 @@ public class DowsingRodItem extends Item {
             }
 
             if(!foundBlock) {
-                player.sendMessage(new TranslatableComponent("item.mccourse.dowsing_rod.no_valuables"),
-                        player.getUUID());
+                player.sendSystemMessage(Component.translatable("item.mccourse.dowsing_rod.no_valuables"));
             }
         }
 
@@ -69,15 +63,12 @@ public class DowsingRodItem extends Item {
         return super.useOn(pContext);
     }
 
-    private boolean isValuableBlock(BlockState state) {
-        return state.is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
-    }
     private void addNbtToDataTablet(Player player, BlockPos pos, Block blockBelow) {
         ItemStack dataTablet =
                 player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET.get()));
 
         CompoundTag nbtData = new CompoundTag();
-        nbtData.putString("universal.last_ore", "Found " + blockBelow.asItem().getRegistryName().toString() + " at (" +
+        nbtData.putString("mccourse.last_ore", "Found " + blockBelow.getName() + " at (" +
                 pos.getX() + ", "+ pos.getY() + ", "+ pos.getZ() + ")");
 
         dataTablet.setTag(nbtData);
@@ -87,18 +78,18 @@ public class DowsingRodItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
                                 TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.universal.dowsing_rod.tooltip.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.mccourse.dowsing_rod.tooltip.shift"));
         } else {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.universal.dowsing_rod.tooltip"));
+            pTooltipComponents.add(Component.translatable("tooltip.mccourse.dowsing_rod.tooltip"));
         }
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow) {
-        player.sendMessage(new TextComponent("Found " + blockBelow.asItem().getRegistryName().toString() + " at " +
-                "(" + blockPos.getX() + ", " + blockPos.getY() + "," + blockPos.getZ() + ")"), player.getUUID());
+        player.sendSystemMessage(Component.literal("Found " + blockBelow.getName() + " at " +
+                "(" + blockPos.getX() + ", " + blockPos.getY() + "," + blockPos.getZ() + ")"));
     }
 
-    private boolean isValuableBlock(Block block) {
-        return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
+    private boolean isValuableBlock(BlockState state) {
+        return state.is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
     }
 }

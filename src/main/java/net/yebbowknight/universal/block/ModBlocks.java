@@ -3,9 +3,7 @@ package net.yebbowknight.universal.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.BlockGetter;
@@ -46,7 +44,7 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops()), ModCreativeModeTab.CROSS_TAB);
 
     public static final RegistryObject<Block> COBALT_ORE = registerBlock("cobalt_ore",
-            () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2, 4)), ModCreativeModeTab.CROSS_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore",
@@ -210,7 +208,7 @@ public class ModBlocks {
                 new Item.Properties().tab(tab)){
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-                pTooltip.add(new TranslatableComponent(tooltipKey));
+                pTooltip.add(Component.translatable(tooltipKey));
             }
         });
     }

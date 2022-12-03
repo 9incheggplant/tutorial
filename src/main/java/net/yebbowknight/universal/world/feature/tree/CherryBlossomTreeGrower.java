@@ -1,5 +1,6 @@
 package net.yebbowknight.universal.world.feature.tree;
 
+import net.minecraft.util.RandomSource;
 import net.yebbowknight.universal.world.feature.ModConfiguredFeature;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -11,7 +12,7 @@ import java.util.Random;
 public class CherryBlossomTreeGrower extends AbstractTreeGrower {
     @Nullable
     @Override
-    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random pRandom, boolean pLargeHive) {
+    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
         return ModConfiguredFeature.CHERRY_BLOSSOM_TREE;
     }
 }

@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.fluid;
+/*package net.yebbowknight.universal.fluid;
 
 import net.yebbowknight.universal.Crossovermod;
 import net.yebbowknight.universal.block.ModBlocks;
@@ -48,3 +48,4 @@ public class ModFluids {
         FLUIDS.register(eventBus);
     }
 }
+*/

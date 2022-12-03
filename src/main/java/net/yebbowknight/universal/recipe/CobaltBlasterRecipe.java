@@ -1,133 +1,121 @@
  package net.yebbowknight.universal.recipe;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import net.yebbowknight.universal.Crossovermod;
-import net.minecraft.core.NonNullList;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+ import com.google.gson.JsonArray;
+ import com.google.gson.JsonObject;
+ import net.minecraft.core.NonNullList;
+ import net.minecraft.network.FriendlyByteBuf;
+ import net.minecraft.resources.ResourceLocation;
+ import net.minecraft.util.GsonHelper;
+ import net.minecraft.world.SimpleContainer;
+ import net.minecraft.world.item.ItemStack;
+ import net.minecraft.world.item.crafting.*;
+ import net.yebbowknight.universal.Crossovermod;
 
-import javax.annotation.Nullable;
+ import javax.annotation.Nullable;
 
-public class CobaltBlasterRecipe implements Recipe<SimpleContainer> {
-    private final ResourceLocation id;
-    private final ItemStack output;
-    private final NonNullList<Ingredient> recipeItems;
+ public class CobaltBlasterRecipe implements Recipe<SimpleContainer> {
+     private final ResourceLocation id;
+     private final ItemStack output;
+     private final NonNullList<Ingredient> recipeItems;
 
-    public CobaltBlasterRecipe(ResourceLocation id, ItemStack output,
-                               NonNullList<Ingredient> recipeItems) {
-        this.id = id;
-        this.output = output;
-        this.recipeItems = recipeItems;
-    }
+     public CobaltBlasterRecipe(ResourceLocation id, ItemStack output,
+                                NonNullList<Ingredient> recipeItems) {
+         this.id = id;
+         this.output = output;
+         this.recipeItems = recipeItems;
+     }
 
-    @Override
-    public boolean matches(SimpleContainer pContainer, net.minecraft.world.level.Level pLevel) {
-        if(recipeItems.get(0).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
-        }
+     @Override
+     public boolean matches(SimpleContainer pContainer, net.minecraft.world.level.Level pLevel) {
+         if(pLevel.isClientSide()) {
+             return false;
+         }
 
-        return false;
-    }
+         if(recipeItems.get(0).test(pContainer.getItem(1))) {
+             return recipeItems.get(1).test(pContainer.getItem(2));
+         }
 
-    @Override
-    public ItemStack assemble(SimpleContainer pContainer) {
-        return output;
-    }
+         return false;
+     }
 
-    @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return true;
-    }
+     @Override
+     public ItemStack assemble(SimpleContainer pContainer) {
+         return output;
+     }
 
-    @Override
-    public ItemStack getResultItem() {
-        return output.copy();
-    }
+     @Override
+     public boolean canCraftInDimensions(int pWidth, int pHeight) {
+         return true;
+     }
 
-    @Override
-    public ResourceLocation getId() {
-        return id;
-    }
+     @Override
+     public ItemStack getResultItem() {
+         return output.copy();
+     }
 
-    @Override
-    public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
-    }
+     @Override
+     public ResourceLocation getId() {
+         return id;
+     }
 
-    @Override
-    public RecipeType<?> getType() {
-        return Type.INSTANCE;
-    }
+     @Override
+     public RecipeSerializer<?> getSerializer() {
+         return Serializer.INSTANCE;
+     }
 
-    public static class Type implements RecipeType<CobaltBlasterRecipe> {
-        private Type() { }
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "cobalt_blasting";
-    }
+     @Override
+     public RecipeType<?> getType() {
+         return Type.INSTANCE;
+     }
 
-    public static class Serializer implements RecipeSerializer<CobaltBlasterRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(Crossovermod.MOD_ID,"cobalt_blasting");
+     public static class Type implements RecipeType<CobaltBlasterRecipe> {
+         private Type() { }
+         public static final Type INSTANCE = new Type();
+         public static final String ID = "cobalt_blasting";
+     }
 
-        @Override
-        public CobaltBlasterRecipe fromJson(ResourceLocation id, JsonObject json) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
+     public static class Serializer implements RecipeSerializer<CobaltBlasterRecipe> {
+         public static final Serializer INSTANCE = new Serializer();
+         public static final ResourceLocation ID = new ResourceLocation(Crossovermod.MOD_ID,"cobalt_blasting");
 
-            JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
+         @Override
+         public CobaltBlasterRecipe fromJson(ResourceLocation id, JsonObject json) {
+             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
-            }
+             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
+             NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
 
-            return new CobaltBlasterRecipe(id, output, inputs);
-        }
+             for (int i = 0; i < inputs.size(); i++) {
+                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+             }
 
-        @Override
-        public CobaltBlasterRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
-            NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
+             return new CobaltBlasterRecipe(id, output, inputs);
+         }
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromNetwork(buf));
-            }
+         @Override
+         public CobaltBlasterRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
-            ItemStack output = buf.readItem();
-            return new CobaltBlasterRecipe(id, output, inputs);
-        }
+             for (int i = 0; i < inputs.size(); i++) {
+                 inputs.set(i, Ingredient.fromNetwork(buf));
+             }
 
-        @Override
-        public void toNetwork(FriendlyByteBuf buf, CobaltBlasterRecipe recipe) {
-            buf.writeInt(recipe.getIngredients().size());
-            for (Ingredient ing : recipe.getIngredients()) {
-                ing.toNetwork(buf);
-            }
-            buf.writeItemStack(recipe.getResultItem(), false);
-        }
+             ItemStack output = buf.readItem();
+             return new CobaltBlasterRecipe(id, output, inputs);
+         }
 
-        @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
-            return INSTANCE;
-        }
+         @Override
+         public void toNetwork(FriendlyByteBuf buf, CobaltBlasterRecipe recipe) {
+             buf.writeInt(recipe.getIngredients().size());
+             for (Ingredient ing : recipe.getIngredients()) {
+                 ing.toNetwork(buf);
+             }
+             buf.writeItemStack(recipe.getResultItem(), false);
+         }
 
-        @Nullable
-        @Override
-        public ResourceLocation getRegistryName() {
-            return ID;
-        }
-
-        @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
-        }
-
-        @SuppressWarnings("unchecked") // Need this wrapper, because generics
-        private static <G> Class<G> castClass(Class<?> cls) {
-            return (Class<G>)cls;
-        }
-    }
-}
+         @SuppressWarnings("unchecked") // Need this wrapper, because generics
+         private static <G> Class<G> castClass(Class<?> cls) {
+             return (Class<G>)cls;
+         }
+     }
+ }

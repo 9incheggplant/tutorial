@@ -5,21 +5,19 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.yebbowknight.universal.Crossovermod;
 import net.yebbowknight.universal.block.ModBlocks;
 import net.yebbowknight.universal.block.ModWoodTypes;
 import net.yebbowknight.universal.block.entity.ModBlockEntities;
 import net.yebbowknight.universal.block.entity.client.PedestalBlockEntityRenderer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.yebbowknight.universal.entity.ModEntityTypes;
-import net.yebbowknight.universal.entity.client.ModBoatRenderer;
 import net.yebbowknight.universal.entity.client.RaccoonRenderer;
 import net.yebbowknight.universal.entity.client.TigerRenderer;
-import net.yebbowknight.universal.fluid.ModFluids;
 import net.yebbowknight.universal.screen.CobaltBlasterScreen;
 import net.yebbowknight.universal.screen.ModMenuTypes;
 import net.yebbowknight.universal.util.ModItemProperties;
@@ -42,9 +40,9 @@ public class ClientModEvents {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.COBALT_BLASTER.get(), RenderType.cutout());
 
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLUID.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLOWING.get(), RenderType.translucent());
+  //      ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_BLOCK.get(), RenderType.translucent());
+  //      ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLUID.get(), RenderType.translucent());
+  //      ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLOWING.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_SAPLING.get(), RenderType.cutout());
@@ -61,7 +59,7 @@ public class ClientModEvents {
         EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
         EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
 
-        EntityRenderers.register(ModEntityTypes.BOAT_ENTITY.get(), ModBoatRenderer::new);
+     //   EntityRenderers.register(ModEntityTypes.BOAT_ENTITY.get(), ModBoatRenderer::new);
     }
 
 }

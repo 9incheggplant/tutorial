@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.item.custom;
+/* package net.yebbowknight.universal.item.custom;
 
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -6,7 +6,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component.translatable;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -50,7 +50,7 @@ public class StorageFinderItem extends Item {
             }
 
             if(!foundBlock) {
-                player.sendMessage(new TranslatableComponent("item.crossover.pirated_memory_card.no_container"),
+                player.sendMessage(new Component.translatable("item.crossover.pirated_memory_card.no_container"),
                         player.getUUID());
             }
         }
@@ -76,9 +76,9 @@ public class StorageFinderItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
                                 TooltipFlag pIsAdvanced) {
         if(Screen.hasShiftDown()) {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.storage_finder.shift"));
+            pTooltipComponents.add(new Component.translatable("tooltip.crossover.storage_finder.shift"));
         } else {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.crossover.storage_finder.tooltip"));
+            pTooltipComponents.add(new Component.translatable("tooltip.crossover.storage_finder.tooltip"));
         }
     }
 
@@ -90,4 +90,4 @@ public class StorageFinderItem extends Item {
     private boolean isValuableBlock(Block block) {
         return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
     }
-}
+}*/

@@ -1,8 +1,7 @@
-package net.yebbowknight.universal.item.custom;
+/*package net.yebbowknight.universal.item.custom;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -37,9 +36,9 @@ public class PiratedmemorycardtItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(pStack.hasTag()) {
             String currentOre = pStack.getTag().getString("crossover.last_container");
-            pTooltipComponents.add(new TextComponent(currentOre));
+            pTooltipComponents.add(Component.translatable("tooltip.mccourse.dowsing_rod.tooltip"));
         }
 
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
-}
+}*/

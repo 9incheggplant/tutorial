@@ -1,4 +1,4 @@
-package net.yebbowknight.universal.entity.custom;
+/* package net.yebbowknight.universal.entity.custom;
 
 import net.yebbowknight.universal.entity.ModEntityTypes;
 import net.yebbowknight.universal.item.ModItems;
@@ -97,3 +97,4 @@ public class ModBoatEntity extends Boat {
         }
     }
 }
+*/
