@@ -1,6 +1,7 @@
-package net.yebbowknight.universal.event.loot;
+/*package net.yebbowknight.universal.event.loot;
 
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -8,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -32,6 +33,11 @@ public class TurnipSeedsFromGrassAdditionModifier extends LootModifier {
         return generatedLoot;
     }
 
+    @Override
+    public Codec<? extends IGlobalLootModifier> codec() {
+        return null;
+    }
+
     public static class Serializer extends GlobalLootModifierSerializer<TurnipSeedsFromGrassAdditionModifier> {
 
         @Override
@@ -48,5 +54,8 @@ public class TurnipSeedsFromGrassAdditionModifier extends LootModifier {
             json.addProperty("addition", ForgeRegistries.ITEMS.getKey(instance.addition).toString());
             return json;
         }
+
+        private JsonObject makeConditions(LootItemCondition[] conditions) {
+        }
     }
-}
+}*/

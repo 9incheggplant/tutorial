@@ -27,7 +27,6 @@ import net.yebbowknight.universal.item.ModItems;
 import net.yebbowknight.universal.painting.ModPaintings;
 import net.yebbowknight.universal.potion.ModPotions;
 import net.yebbowknight.universal.recipe.ModRecipes;
-import net.yebbowknight.universal.screen.ModMenuTypes;
 import net.yebbowknight.universal.sound.ModSounds;
 import net.yebbowknight.universal.util.BetterBrewingRecipe;
 import net.yebbowknight.universal.villager.ModVillagers;
@@ -60,7 +59,7 @@ public class Crossovermod
         //ModFluids.register(eventBus);
 
         ModBlockEntities.register(eventBus);
-        ModMenuTypes.register(eventBus);
+      //  ModMenuTypes.register(eventBus);
 
         ModRecipes.register(eventBus);
         ModEffects.register(eventBus);

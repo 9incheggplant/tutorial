@@ -1,6 +1,5 @@
 package net.yebbowknight.universal.event;
 
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -18,8 +17,6 @@ import net.yebbowknight.universal.block.entity.client.PedestalBlockEntityRendere
 import net.yebbowknight.universal.entity.ModEntityTypes;
 import net.yebbowknight.universal.entity.client.RaccoonRenderer;
 import net.yebbowknight.universal.entity.client.TigerRenderer;
-import net.yebbowknight.universal.screen.CobaltBlasterScreen;
-import net.yebbowknight.universal.screen.ModMenuTypes;
 import net.yebbowknight.universal.util.ModItemProperties;
 
 @Mod.EventBusSubscriber(modid = Crossovermod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -52,7 +49,7 @@ public class ClientModEvents {
 
         ModItemProperties.addCustomItemProperties();
 
-        MenuScreens.register(ModMenuTypes.COBALT_BLASTER_MENU.get(), CobaltBlasterScreen::new);
+   //     MenuScreens.register(ModMenuTypes.COBALT_BLASTER_MENU.get(), CobaltBlasterScreen::new);
 
         WoodType.register(ModWoodTypes.CHERRY_BLOSSOM);
 

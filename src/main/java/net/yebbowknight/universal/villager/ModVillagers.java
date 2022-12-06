@@ -18,7 +18,7 @@ public class ModVillagers {
     public static final DeferredRegister<PoiType> POI_TYPES
             = DeferredRegister.create(ForgeRegistries.POI_TYPES, Crossovermod.MOD_ID);
     public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS
-            = DeferredRegister.create(ForgeRegistries.PROFESSIONS, Crossovermod.MOD_ID);
+            = DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, Crossovermod.MOD_ID);
 
     public static final RegistryObject<PoiType> BLASTER_POI = POI_TYPES.register("blastpoi",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.COBALT_BLASTER.get().getStateDefinition().getPossibleStates()),

@@ -13,7 +13,7 @@ import net.yebbowknight.universal.entity.custom.TigerEntity;
 
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITIES, Crossovermod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Crossovermod.MOD_ID);
 
     public static final RegistryObject<EntityType<RaccoonEntity>> RACCOON = ENTITY_TYPES.register("raccoon",
             () -> EntityType.Builder.of(RaccoonEntity::new, MobCategory.CREATURE)

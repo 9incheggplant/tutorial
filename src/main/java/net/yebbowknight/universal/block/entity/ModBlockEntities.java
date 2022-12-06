@@ -10,11 +10,11 @@ import net.yebbowknight.universal.block.ModBlocks;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Crossovermod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Crossovermod.MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<CobaltBlasterBlockEntity>> COBALT_BLASTER =
-            BLOCK_ENTITIES.register("cobalt_blaster", () ->
-                    BlockEntityType.Builder.of(CobaltBlasterBlockEntity::new, ModBlocks.COBALT_BLASTER.get()).build(null));
+  //  public static final RegistryObject<BlockEntityType<CobaltBlasterBlockEntity>> COBALT_BLASTER =
+  //          BLOCK_ENTITIES.register("cobalt_blaster", () ->
+  //                  BlockEntityType.Builder.of(CobaltBlasterBlockEntity::new, ModBlocks.COBALT_BLASTER.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
