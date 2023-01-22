@@ -140,20 +140,20 @@ public class CobaltBlasterBlock extends BaseEntityBlock {
         }
     }
 
-    @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
-                                 Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
-            BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof CobaltBlasterBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer)pPlayer), (CobaltBlasterBlockEntity)entity, pPos);
-            } else {
-                throw new IllegalStateException("Our Container provider is missing!");
-            }
-        }
-
-        return InteractionResult.sidedSuccess(pLevel.isClientSide());
-    }
+   // @Override
+   // public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
+   //                              Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+   //     if (!pLevel.isClientSide()) {
+   //         BlockEntity entity = pLevel.getBlockEntity(pPos);
+   //         if(entity instanceof CobaltBlasterBlockEntity) {
+   //             NetworkHooks.openGui(((ServerPlayer)pPlayer), (CobaltBlasterBlockEntity)entity, pPos);
+   //         } else {
+   //             throw new IllegalStateException("Our Container provider is missing!");
+   //         }
+   //     }
+//
+   //     return InteractionResult.sidedSuccess(pLevel.isClientSide());
+   // }
 
     @Nullable
     @Override
